@@ -59,6 +59,7 @@
     "@material-ui/lab": "^5.0.0-alpha.30",
     "@material-ui/system": "^5.0.0-alpha.29",
     "@material-ui/utils": "^5.0.0-alpha.29",
+    "@mui/material": "^5.4.3",
     "@react-pdf/renderer": "^2.0.4",
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^5.11.4",
@@ -170,6 +171,7 @@
     "eslint-plugin-react-hooks": "4.2.0",
     "prettier": "2.2.1",
     "prettier-eslint": "12.0.0",
-    "prettier-eslint-cli": "5.0.1"
+    "prettier-eslint-cli": "5.0.1",
+    "tailwindcss": "^3.0.23"
   }
 }

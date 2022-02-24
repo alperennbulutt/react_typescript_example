@@ -2,6 +2,7 @@
 import { Container, Typography } from '@material-ui/core';
 // components
 import Page from '../components/Page';
+import TextArea from '../components/customComponents/TextArea';
 
 // ----------------------------------------------------------------------
 
@@ -9,21 +10,16 @@ export default function PageOne() {
   return (
     <Page title="Page One | Minimal-UI">
       <Container maxWidth="xl">
-        <Typography variant="h3" component="h1" paragraph>
+        <Typography variant="h3" component="h1" paragraph color="green">
           Page One
         </Typography>
-        <Typography gutterBottom>
-          Curabitur turpis. Vestibulum facilisis, purus nec pulvinar iaculis,
-          ligula mi congue nunc, vitae euismod ligula urna in dolor. Nam quam
-          nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Phasellus
-          blandit leo ut odio. Vestibulum ante ipsum primis in faucibus orci
-          luctus et ultrices posuere cubilia Curae; Fusce id purus. Aliquam
-          lorem ante, dapibus in, viverra quis, feugiat a, tellus. In
-          consectetuer turpis ut velit. Aenean posuere, tortor sed cursus
-          feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis
-          lacus. Vestibulum suscipit nulla quis orci. Nam commodo suscipit quam.
-          Sed a libero.
-        </Typography>
+        <TextArea
+          placeholder="Lütfen Vasiyetinizi Yazınız"
+          width="100%"
+          maxRows={7}
+          minRows={2}
+        />
+        <Typography gutterBottom>deneme</Typography>
         <Typography>
           Praesent ac sem eget est egestas volutpat. Phasellus viverra nulla ut
           metus varius laoreet. Curabitur ullamcorper ultricies nisi. Ut non
