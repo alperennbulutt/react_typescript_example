@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Page from '../components/Page';
 import TextArea from '../components/customComponents/TextArea';
 import CustomAddButton from '../components/customComponents/CustomButton';
+import EditedText from '../components/customComponents/EditedText';
 
 // ----------------------------------------------------------------------
 
@@ -33,7 +34,7 @@ export default function PageOne() {
           onChange={handleChange}
         />
         <CustomAddButton data={data} />
-        <div className="deneme">asd</div>
+        <EditedText />
       </Container>
     </Page>
   );
