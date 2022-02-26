@@ -5,6 +5,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
+import { useState } from 'react';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -20,13 +21,21 @@ interface ICustomizedDialogs {
 }
 
 export default function CustomizedDialogs(props: ICustomizedDialogs) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [data, setData] = useState('');
 
   const handleClickOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const showDataOnDialog = () => {
+    const newData = props.data;
+    setData(newData);
+    setOpen(false);
+    console.log('dataa', data);
   };
 
   return (
@@ -43,7 +52,7 @@ export default function CustomizedDialogs(props: ICustomizedDialogs) {
           <Typography gutterBottom>{props.data}</Typography>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose}>
+          <Button autoFocus onClick={showDataOnDialog}>
             Save changes
           </Button>
         </DialogActions>
