@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router-dom';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
@@ -6,6 +7,11 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { PATH_DASHBOARD } from '../../routes/paths';
+import PageTwo from '../../views/PageTwo';
+import { saveData } from '../../redux/slices/pageTwo';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -22,7 +28,7 @@ interface ICustomizedDialogs {
 
 export default function CustomizedDialogs(props: ICustomizedDialogs) {
   const [open, setOpen] = useState(false);
-  const [data, setData] = useState('');
+  const history = useHistory();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -32,10 +38,16 @@ export default function CustomizedDialogs(props: ICustomizedDialogs) {
   };
 
   const showDataOnDialog = () => {
-    const newData = props.data;
-    setData(newData);
     setOpen(false);
-    console.log('dataa', data);
+    // route and send props
+    history.push({
+      pathname: PATH_DASHBOARD.general.pageTwo,
+      state: {
+        keyDeneme: props.data === undefined ? '' : props.data
+      }
+    });
+
+    // history.push(PATH_DASHBOARD.general.pageTwo);
   };
 
   return (

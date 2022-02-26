@@ -1,11 +1,24 @@
 // material
 import { Container, Typography } from '@material-ui/core';
+import { useLocation } from 'react-router';
+
 // components
 import Page from '../components/Page';
 
 // ----------------------------------------------------------------------
-
+interface IPageTwo {
+  keyDeneme: string;
+}
 export default function PageTwo() {
+  const location = useLocation<IPageTwo>();
+
+  console.log('stateden gelen deger', location.state.keyDeneme);
+
+  const gelenDeger =
+    location.state.keyDeneme === undefined
+      ? 'boş geldii'
+      : location.state.keyDeneme;
+
   return (
     <Page title="Page Two | Minimal-UI">
       <Container maxWidth="xl">
@@ -13,16 +26,7 @@ export default function PageTwo() {
           Page Two
         </Typography>
         <Typography gutterBottom>
-          Curabitur turpis. Vestibulum facilisis, purus nec pulvinar iaculis,
-          ligula mi congue nunc, vitae euismod ligula urna in dolor. Nam quam
-          nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Phasellus
-          blandit leo ut odio. Vestibulum ante ipsum primis in faucibus orci
-          luctus et ultrices posuere cubilia Curae; Fusce id purus. Aliquam
-          lorem ante, dapibus in, viverra quis, feugiat a, tellus. In
-          consectetuer turpis ut velit. Aenean posuere, tortor sed cursus
-          feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis
-          lacus. Vestibulum suscipit nulla quis orci. Nam commodo suscipit quam.
-          Sed a libero.
+          {gelenDeger === undefined ? 'undefined' : gelenDeger}
         </Typography>
       </Container>
     </Page>
