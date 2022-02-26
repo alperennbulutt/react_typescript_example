@@ -1,11 +1,10 @@
 // material
 import { Container, Typography } from '@material-ui/core';
 // components
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Page from '../components/Page';
 import TextArea from '../components/customComponents/TextArea';
-import CustomAddButton from '../components/customComponents/CustomButton';
-import EditedText from '../components/customComponents/EditedText';
+import CustomizedDialogs from '../components/customComponents/CustomDialog';
 
 // ----------------------------------------------------------------------
 
@@ -33,8 +32,8 @@ export default function PageOne() {
           minRows={10}
           onChange={handleChange}
         />
-        <CustomAddButton data={data} />
-        <EditedText />
+
+        <CustomizedDialogs data={data} />
       </Container>
     </Page>
   );

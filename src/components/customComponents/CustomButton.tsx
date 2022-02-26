@@ -7,7 +7,7 @@ interface ICustomAddButton {
   data?: string;
 }
 export default function CustomAddButton(props: ICustomAddButton) {
-  console.log('aaaaaa', props.data);
+  console.log('CustomAddButton', props.data);
   const [data, setData] = useState('');
 
   const buttonOnClick = () => {
