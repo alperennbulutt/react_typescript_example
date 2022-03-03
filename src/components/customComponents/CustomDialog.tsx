@@ -41,6 +41,7 @@ export default function CustomizedDialogs(props: ICustomizedDialogs) {
     setOpen(false);
     console.log('veri gelecek miş ', props.data);
     dispatch(saveData(props.data === undefined ? '' : props.data));
+    localStorage.setItem('pageTwoValue', props.data);
 
     // route and send props
     history.push({
@@ -56,7 +57,7 @@ export default function CustomizedDialogs(props: ICustomizedDialogs) {
   return (
     <div>
       <Button variant="outlined" onClick={handleClickOpen}>
-        Open dialog
+        Vasiyet'i Kaydet
       </Button>
       <BootstrapDialog
         onClose={handleClose}
