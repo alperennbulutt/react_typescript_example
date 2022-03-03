@@ -2,26 +2,20 @@ import { createSlice } from '@reduxjs/toolkit';
 
 // ----------------------------------------------------------------------
 
-type data = string;
-
 type dataState = {
-  data: data;
+  value: string;
 };
 
 const initialState: dataState = {
-  data: ''
+  value: ''
 };
 
 const slice = createSlice({
   name: 'dataState',
   initialState,
   reducers: {
-    saveData(state, action) {
-      state.data = action.payload;
-    },
-
-    getData(state, action) {
-      state.data = action.payload;
+    saveData: (state, action) => {
+      state.value = action.payload;
     }
   }
 });
@@ -30,4 +24,4 @@ const slice = createSlice({
 export default slice.reducer;
 
 // Actions
-export const { saveData, getData } = slice.actions;
+export const { saveData } = slice.actions;

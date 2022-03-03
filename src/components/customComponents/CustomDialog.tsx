@@ -8,10 +8,9 @@ import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { saveData } from '../../redux/slices/pageTwoSlice';
 
 import { PATH_DASHBOARD } from '../../routes/paths';
-import PageTwo from '../../views/PageTwo';
-import { saveData } from '../../redux/slices/pageTwo';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -27,6 +26,7 @@ interface ICustomizedDialogs {
 }
 
 export default function CustomizedDialogs(props: ICustomizedDialogs) {
+  const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const history = useHistory();
 
@@ -39,6 +39,9 @@ export default function CustomizedDialogs(props: ICustomizedDialogs) {
 
   const showDataOnDialog = () => {
     setOpen(false);
+    console.log('veri gelecek miş ', props.data);
+    dispatch(saveData(props.data === undefined ? '' : props.data));
+
     // route and send props
     history.push({
       pathname: PATH_DASHBOARD.general.pageTwo,

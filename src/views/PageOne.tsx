@@ -12,11 +12,8 @@ export default function PageOne() {
   const [data, setData] = useState('');
 
   const handleChange = (e: any) => {
-    console.log(e.target.value);
     const newData = e.target.value;
     setData(newData);
-    console.log('newData', newData);
-    console.log('data', data);
   };
 
   return (
