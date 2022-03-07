@@ -17,10 +17,10 @@ export default function PageOne() {
   };
 
   return (
-    <Page title="Page One | Minimal-UI">
+    <Page title="Vasiyet Yaz">
       <Container maxWidth="xl">
         <Typography variant="h3" component="h1" paragraph color="green">
-          Page One
+          Vasiyetinizi Yazınız
         </Typography>
         <TextArea
           placeholder="Lütfen Vasiyetinizi Yazınız"
